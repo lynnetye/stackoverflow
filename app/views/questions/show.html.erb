@@ -1,0 +1,23 @@
+<h1><%= @question.title %></h1>
+
+<a href="<%= edit_question_path(@question) %>">Edit Post</a>
+
+<a href="/questions/<%= @question.id %>" data-method="delete">Delete Post</a>
+
+<% if @question.answers.length == 0 %>
+  <p>Be the first to post an answer!</p>
+<% else %>
+  <h3>Answers:</h3>
+  <% @question.answers.each do |a| %>
+    <p><%= a.content %></p>
+  <% end %>
+<% end %>
+
+<h3>Post an Answer Here</h3>
+<form action="/questions/<%= @question.id %>/answers" method="post">
+  <input type="text" placeholder="Answer" name="answer[content]">
+  <input type="submit" value="Post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"/>
+</form>
+
+<a href="/questions">To All Questions</a>

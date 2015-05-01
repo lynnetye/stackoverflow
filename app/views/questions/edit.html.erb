@@ -1,0 +1,7 @@
+<form action="/questions/<%= @question.id %>" method="post">
+  <input name="_method" type="hidden" value="put" />
+  <input type="text" placeholder="Title" name="question[title]" value="<%=@question.title %>">
+  <input type="text" placeholder="Content" name="question[content]" value="<%=@question.content %>">
+  <input type="submit" value="Update">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"/>
+</form>

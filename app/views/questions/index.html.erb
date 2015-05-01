@@ -1,0 +1,8 @@
+<h1>All Questions</h1>
+
+<% @questions.each do |q| %>
+	<h2><%= q.title %> <a href="<%= question_path(q) %>">details</a></h2>
+  <p><%= q.content %> </p>
+<% end %>
+
+<h1><a href="<%= new_question_path %>">Ask a Question</a></h1>

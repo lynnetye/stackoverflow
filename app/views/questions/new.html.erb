@@ -1,0 +1,6 @@
+<form action="/questions" method="post">
+  <input type="text" placeholder="Title" name="question[title]">
+  <input type="text" placeholder="Content" name="question[content]">
+  <input type="submit" value="Create">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"/>
+</form>
