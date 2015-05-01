@@ -44,3 +44,6 @@ class QuestionsController < ApplicationController
     redirect_to "/questions"
   end
 end
+
+
+# test
